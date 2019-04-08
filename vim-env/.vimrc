@@ -40,8 +40,7 @@ Plug 'ajh17/vimcompletesme'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-"Plug 'lifepillar/vim-mucomplete'
-"Plug 'vim-scripts/AutoComplPop'
+Plug 'scrooloose/nerdcommenter'
 
 " All of your Plugins must be added before the following line
 call plug#end()            " required
@@ -52,6 +51,8 @@ filetype plugin indent on    " required
 
 " LSP omni completion
 set completeopt=longest,menuone,noinsert
+let g:lsp_signs_enabled = 1         " enable signs
+let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
 if executable('clangd')
     augroup lsp_clangd
         autocmd!
